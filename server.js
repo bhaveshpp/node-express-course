@@ -53,6 +53,18 @@ app.post('/auth',function(req,res){
 
 });
 
+const mockProductData = [{id: "1", name: 'Khaman',price: "50"},{id: "2", name: 'Samosa',price: "30"}];
+
+// Get all products
+
+app.get('/product',function(req,res){
+  res.json({
+        success: true,
+        message: 'get all products.',
+        users: mockProductData
+  });
+});
+
 app.listen(8000,function(){
   console.log("Server is Running");
 });
