@@ -29,7 +29,7 @@ app.get('/user/:id',function(req,res){
 
 //  login using postmethod
 
-app.post('/user/auth',function(req,res){
+app.post('/auth',function(req,res){
 
   const username = req.body.username;
   const password = req.body.password;
