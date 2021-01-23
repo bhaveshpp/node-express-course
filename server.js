@@ -29,7 +29,7 @@ app.get('/user/:id',function(req,res){
 
 //  login using postmethod
 
-app.post('/user/auth:id',function(req,res){
+app.post('/user/auth',function(req,res){
 
   const username = req.body.username;
   const password = req.body.password;
@@ -43,7 +43,8 @@ app.post('/user/auth:id',function(req,res){
         message: 'username password matched.',
         token: 'encripted tocken'
     });
-
+  }
+  else{
     res.json({
         success: false,
         message: 'username password not matched.',
@@ -51,9 +52,6 @@ app.post('/user/auth:id',function(req,res){
   }
 
 });
-
-
-
 
 app.listen(8000,function(){
   console.log("Server is Running");
